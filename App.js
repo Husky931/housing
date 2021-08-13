@@ -10,12 +10,10 @@ export default function App() {
           style={styles.img}
           source={require("./front-image.jpg")}
         >
-          {/* <View style={styles.whiteRoundArea}></View> */}
-          {/* <Text style={styles.text}>Mhm</Text> */}
+          <View style={styles.whiteRoundArea}></View>
         </ImageBackground>
       </View>
-
-      <View style={styles.bottomRow}></View>
+      <View style={styles.bottomRow}>{/* <Text>mh</Text> */}</View>
     </View>
   );
 }
@@ -25,25 +23,29 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   topRow: {
-    height: "35%",
+    height: "40%",
     width: "100%",
   },
   img: {
     width: "100%",
     height: "100%",
+    position: "relative",
+    zIndex: 800,
   },
   whiteRoundArea: {
-    height: 10,
-    backgroundColor: "yellow",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-  },
-  text: {
-    color: "black",
+    height: "20%",
+    backgroundColor: "#f0f8ff",
+    position: "absolute",
+    zIndex: 999,
+    bottom: -1,
+    left: 0,
+    right: 0,
+    borderTopLeftRadius: 1000,
+    borderTopRightRadius: 1000,
   },
   bottomRow: {
     width: "100%",
-    // backgroundColor: "#f0f8ff",
-    backgroundColor: "red",
+    backgroundColor: "#f0f8ff",
+    flex: 1,
   },
 });
