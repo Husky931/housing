@@ -10,7 +10,7 @@ export default function RoundButton() {
   return (
     <TouchableOpacity style={styles.btn} onPress={() => console.log("yoo")}>
       <View>
-        <Text style={styles.text}>Hong Kongk</Text>
+        <Text style={styles.text}>Пребарај</Text>
       </View>
     </TouchableOpacity>
   );
@@ -18,7 +18,7 @@ export default function RoundButton() {
 
 const styles = StyleSheet.create({
   btn: {
-    backgroundColor: "yellow",
+    backgroundColor: "#2eb6b6",
     width: "80%",
     height: 60,
     borderWidth: 0.2,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: "bold",
-    // fontSize: 33,
-    fontSize: responsiveFontSize(2.4),
+    color: "white",
+    fontSize: responsiveFontSize(2.7),
   },
 });

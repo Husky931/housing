@@ -16,12 +16,6 @@ export default function HomeScreen() {
       <View style={styles.bottomRow}>
         <View style={styles.buttonSection}>
           <RoundButton />
-          <RoundButton />
-          <Button
-            title="Yo"
-            onPress={() => console.log("hey")}
-            style={styles.bottomBtn}
-          />
         </View>
       </View>
     </View>
