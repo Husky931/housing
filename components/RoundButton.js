@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import {
   responsiveHeight,
   responsiveWidth,
@@ -8,9 +8,11 @@ import {
 
 export default function RoundButton() {
   return (
-    <View style={styles.btn}>
-      <Text style={styles.text}>Hong Kong</Text>
-    </View>
+    <TouchableOpacity style={styles.btn} onPress={() => console.log("yoo")}>
+      <View>
+        <Text style={styles.text}>Hong Kongk</Text>
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -25,10 +27,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: "2%",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.4,
   },
   text: {
     fontWeight: "bold",
     // fontSize: 33,
-    fontSize: responsiveFontSize(2),
+    fontSize: responsiveFontSize(2.4),
   },
 });
