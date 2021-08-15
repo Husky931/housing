@@ -15,7 +15,23 @@ export default function HomeScreen() {
       </View>
       <View style={styles.bottomRow}>
         <View style={styles.buttonSection}>
-          <RoundButton />
+          <RoundButton
+            icon="search"
+            type="font-awesome"
+            text="Пребарај"
+            bgColor={{ backgroundColor: "#2eb6b6" }}
+            textColor={{ color: "white" }}
+            iconColor="white"
+          />
+          <RoundButton
+            icon="chevron-down"
+            type="font-awesome"
+            size="17"
+            text="Скопје"
+            bgColor={{ backgroundColor: "white" }}
+            textColor={{ color: "black" }}
+            iconColor="black"
+          />
         </View>
       </View>
     </View>
@@ -53,6 +69,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonSection: {
+    // marginTop: -90,
+    marginTop: "-22%",
     alignItems: "center",
   },
 });
