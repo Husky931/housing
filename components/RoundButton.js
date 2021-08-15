@@ -7,7 +7,6 @@ import {
   responsiveWidth,
   responsiveFontSize,
 } from "react-native-responsive-dimensions";
-import { color } from "react-native-elements/dist/helpers";
 
 export default function RoundButton({
   icon,

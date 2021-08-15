@@ -1,11 +1,7 @@
 import React from "react";
 import RoundButton from "../components/RoundButton";
-import Chat from "./Chat";
-import Liked from "./Liked";
-import Me from "./Me";
-import Add from "./Add";
+import App from "../App";
 import { StyleSheet, View, ImageBackground } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
@@ -26,6 +22,7 @@ export default function HomeScreen() {
           <RoundButton
             icon="search"
             type="font-awesome"
+            size={17}
             text="Пребарај"
             bgColor={{ backgroundColor: "#2eb6b6" }}
             textColor={{ color: "white" }}
@@ -34,7 +31,7 @@ export default function HomeScreen() {
           <RoundButton
             icon="chevron-down"
             type="font-awesome"
-            size="17"
+            size={17}
             text="Скопје"
             bgColor={{ backgroundColor: "white" }}
             textColor={{ color: "black" }}
@@ -42,17 +39,7 @@ export default function HomeScreen() {
           />
         </View>
       </View>
-      <View style={styles.nav_tab_bottom}>
-        <NavigationContainer>
-          <Tab.Navigator>
-            <Tab.Screen name="home" component={HomeScreen} />
-            <Tab.Screen name="chat" component={Chat} />
-            <Tab.Screen name="add" component={Add} />
-            <Tab.Screen name="liked" component={Liked} />
-            <Tab.Screen name="me" component={Me} />
-          </Tab.Navigator>
-        </NavigationContainer>
-      </View>
+      <View style={styles.nav_tab_bottom}></View>
     </View>
   );
 }
