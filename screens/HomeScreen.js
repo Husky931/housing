@@ -1,6 +1,14 @@
 import React from "react";
 import RoundButton from "../components/RoundButton";
-import { StyleSheet, View, ImageBackground, Button } from "react-native";
+import Chat from "./Chat";
+import Liked from "./Liked";
+import Me from "./Me";
+import Add from "./Add";
+import { StyleSheet, View, ImageBackground } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+const Tab = createBottomTabNavigator();
 
 export default function HomeScreen() {
   return (
@@ -34,6 +42,17 @@ export default function HomeScreen() {
           />
         </View>
       </View>
+      <View style={styles.nav_tab_bottom}>
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="home" component={HomeScreen} />
+            <Tab.Screen name="chat" component={Chat} />
+            <Tab.Screen name="add" component={Add} />
+            <Tab.Screen name="liked" component={Liked} />
+            <Tab.Screen name="me" component={Me} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </View>
     </View>
   );
 }
@@ -50,13 +69,11 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     position: "relative",
-    // zIndex: 800,
   },
   whiteRoundArea: {
     height: "20%",
     backgroundColor: "#f0f8ff",
     position: "absolute",
-    // zIndex: 999,
     bottom: -1,
     left: 0,
     right: 0,
@@ -69,8 +86,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonSection: {
-    // marginTop: -90,
     marginTop: "-22%",
     alignItems: "center",
   },
+  nav_tab_bottom: {},
 });
