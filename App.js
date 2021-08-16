@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { StyleSheet } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
@@ -16,7 +17,11 @@ export default function App() {
     <NavigationContainer>
       <Safer>
         <Tab.Navigator>
-          <Tab.Screen name="home" component={HomeScreen} />
+          <Tab.Screen
+            name="home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
           <Tab.Screen name="chat" component={Chat} />
           <Tab.Screen name="add" component={Add} />
           <Tab.Screen name="liked" component={Liked} />

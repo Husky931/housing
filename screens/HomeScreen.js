@@ -1,10 +1,9 @@
 import React from "react";
 import RoundButton from "../components/RoundButton";
-import App from "../App";
 import { StyleSheet, View, ImageBackground } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
 
 export default function HomeScreen() {
   return (
