@@ -1,6 +1,7 @@
 import React from "react";
 import RoundButton from "../components/RoundButton";
-import { StyleSheet, View, ImageBackground } from "react-native";
+import { StyleSheet, View, ImageBackground, Text } from "react-native";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 export default function HomeScreen() {
   return (
@@ -33,6 +34,16 @@ export default function HomeScreen() {
             textColor={{ color: "black" }}
             iconColor="black"
           />
+        </View>
+        <View style={styles.around_you_section}>
+          <Text style={styles.around_you_section_heading}>
+            Во твоја близина
+          </Text>
+          <View style={styles.around_you_section_apartments_list}>
+            <Text>1</Text>
+            <Text>2</Text>
+            <Text>3</Text>
+          </View>
         </View>
       </View>
       <View style={styles.nav_tab_bottom}></View>
@@ -71,6 +82,22 @@ const styles = StyleSheet.create({
   buttonSection: {
     marginTop: "-22%",
     alignItems: "center",
+  },
+  around_you_section: {
+    marginTop: "10%",
+    marginBottom: "3%",
+  },
+  around_you_section_heading: {
+    fontWeight: "bold",
+    fontSize: responsiveFontSize(3),
+    marginLeft: "5%",
+  },
+  around_you_section_apartments_list: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-around",
+    marginTop: 10,
   },
   nav_tab_bottom: {},
 });
