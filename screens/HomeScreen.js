@@ -1,8 +1,16 @@
 import React from "react";
 import RoundButton from "../components/RoundButton";
-import { StyleSheet, View, ImageBackground, Text, Button } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ImageBackground,
+  Text,
+  Button,
+  Image,
+} from "react-native";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { useWindowDimensions } from "react-native";
+import globalStyles from "../globalStylesheet/app";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -32,6 +40,31 @@ export default function HomeScreen() {
             { height: windowHeight, width: windowWidth, borderRadius: "10%" },
           ]}
         >
+          <View
+            style={[
+              globalStyles.row,
+              globalStyles.width100,
+              globalStyles.mTopBottom_5,
+              styles.height60,
+            ]}
+          >
+            <Image
+              source={require("../images/front-skopje.jpeg")}
+              style={[globalStyles.fr1, globalStyles.height100]}
+            />
+            <Image
+              source={require("../images/front-ohrid.jpg")}
+              style={[
+                globalStyles.fr1,
+                globalStyles.height100,
+                globalStyles.m_l_r_2,
+              ]}
+            />
+            <Image
+              source={require("../images/front-shtip.jpeg")}
+              style={[globalStyles.fr1, globalStyles.height100]}
+            />
+          </View>
           {cities.map((m, i) => (
             <Button
               key={i}
@@ -162,6 +195,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "left",
   },
-  cities_list_IndividualCity_Text: {},
+  height60: {
+    height: 60,
+  },
   nav_tab_bottom: {},
 });
