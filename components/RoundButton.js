@@ -18,7 +18,10 @@ export default function RoundButton({
   iconColor,
 }) {
   return (
-    <TouchableOpacity style={[styles.btn, bgColor]}>
+    <TouchableOpacity
+      style={[styles.btn, bgColor]}
+      onPress={() => console.log("yo")}
+    >
       <View style={[globalStyles.row]}>
         <Text style={[styles.text, globalStyles.m_l_r_2, textColor]}>
           {text}
@@ -33,8 +36,6 @@ const styles = StyleSheet.create({
   btn: {
     width: "80%",
     height: 60,
-    // borderWidth: 0.2,
-    // borderColor: "#20232a",
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center",

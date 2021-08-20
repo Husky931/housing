@@ -1,11 +1,47 @@
 import React from "react";
 import RoundButton from "../components/RoundButton";
-import { StyleSheet, View, ImageBackground, Text } from "react-native";
+import { StyleSheet, View, ImageBackground, Text, Button } from "react-native";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
+import { useWindowDimensions } from "react-native";
 
 export default function HomeScreen() {
+  const window = useWindowDimensions();
+  let windowHeight = parseInt(window.height * 0.8);
+  let windowWidth = parseInt(window.width * 0.8);
+
+  const cities = [
+    "Скопје",
+    "Штип",
+    "Охрид",
+    "Дојран",
+    "Преспа",
+    "Битола",
+    "Струмица",
+    "Куманово",
+    "Прилеп",
+    "Тетово",
+    "Велес",
+  ];
+
   return (
     <View style={styles.container}>
+      <View style={styles.absolute_city_picker}>
+        <View
+          style={[
+            styles.absolute_city_picker_box,
+            { height: windowHeight, width: windowWidth, borderRadius: "10%" },
+          ]}
+        >
+          {cities.map((m, i) => (
+            <Button
+              key={i}
+              style={styles.cities_list_IndividualCity_View}
+              title={m}
+              onPress={() => console.log(m)}
+            ></Button>
+          ))}
+        </View>
+      </View>
       <View style={styles.topRow}>
         <ImageBackground
           style={styles.img}
@@ -54,6 +90,23 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     height: "100%",
+    position: "relative",
+  },
+  absolute_city_picker: {
+    position: "absolute",
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    zIndex: 55,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+    width: "100%",
+  },
+  absolute_city_picker_box: {
+    backgroundColor: "white",
+    zIndex: 999,
+    padding: "5%",
   },
   topRow: {
     height: "40%",
@@ -68,6 +121,7 @@ const styles = StyleSheet.create({
     height: "20%",
     backgroundColor: "#f0f8ff",
     position: "absolute",
+    // zIndex: -1,
     bottom: -1,
     left: 0,
     right: 0,
@@ -99,5 +153,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     marginTop: 10,
   },
+  cities_list_IndividualCity_View: {
+    margin: "2%",
+    marginBottom: "6%",
+    borderBottomWidth: 2,
+    borderBottomColor: "silver",
+    fontSize: responsiveFontSize(2),
+    fontWeight: "bold",
+    textAlign: "left",
+  },
+  cities_list_IndividualCity_Text: {},
   nav_tab_bottom: {},
 });
