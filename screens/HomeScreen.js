@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import RoundButton from "../components/RoundButton";
 import {
   StyleSheet,
@@ -7,6 +7,7 @@ import {
   Text,
   Button,
   Image,
+  Pressable,
 } from "react-native";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { useWindowDimensions } from "react-native";
@@ -16,6 +17,12 @@ export default function HomeScreen() {
   const window = useWindowDimensions();
   let windowHeight = parseInt(window.height * 0.8);
   let windowWidth = parseInt(window.width * 0.8);
+
+  const [pickCity, setPickCity] = useState(false);
+
+  const flipPickCity = () => {
+    setPickCity(!pickCity);
+  };
 
   const cities = [
     "Скопје",
@@ -33,48 +40,54 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.absolute_city_picker}>
-        <View
-          style={[
-            styles.absolute_city_picker_box,
-            { height: windowHeight, width: windowWidth, borderRadius: "10%" },
-          ]}
+      {pickCity && (
+        <Pressable
+          style={styles.absolute_city_picker}
+          onPress={() => flipPickCity()}
         >
-          <View
+          <Pressable
             style={[
-              globalStyles.row,
-              globalStyles.width100,
-              globalStyles.mTopBottom_5,
-              styles.height60,
+              styles.absolute_city_picker_box,
+              { height: windowHeight, width: windowWidth, borderRadius: "10%" },
             ]}
           >
-            <Image
-              source={require("../images/front-skopje.jpeg")}
-              style={[globalStyles.fr1, globalStyles.height100]}
-            />
-            <Image
-              source={require("../images/front-ohrid.jpg")}
+            <View
               style={[
-                globalStyles.fr1,
-                globalStyles.height100,
-                globalStyles.m_l_r_2,
+                globalStyles.row,
+                globalStyles.width100,
+                globalStyles.mTopBottom_5,
+                styles.height60,
               ]}
-            />
-            <Image
-              source={require("../images/front-shtip.jpeg")}
-              style={[globalStyles.fr1, globalStyles.height100]}
-            />
-          </View>
-          {cities.map((m, i) => (
-            <Button
-              key={i}
-              style={styles.cities_list_IndividualCity_View}
-              title={m}
-              onPress={() => console.log(m)}
-            ></Button>
-          ))}
-        </View>
-      </View>
+            >
+              <Image
+                source={require("../images/front-skopje.jpeg")}
+                style={[globalStyles.fr1, globalStyles.height100]}
+              />
+              <Image
+                source={require("../images/front-ohrid.jpg")}
+                style={[
+                  globalStyles.fr1,
+                  globalStyles.height100,
+                  globalStyles.m_l_r_2,
+                ]}
+              />
+              <Image
+                source={require("../images/front-shtip.jpeg")}
+                style={[globalStyles.fr1, globalStyles.height100]}
+              />
+            </View>
+            {cities.map((city, i) => (
+              <Button
+                key={i}
+                style={styles.cities_list_IndividualCity_View}
+                title={city}
+                onPress={() => console.log(city)}
+              ></Button>
+            ))}
+          </Pressable>
+        </Pressable>
+      )}
+
       <View style={styles.topRow}>
         <ImageBackground
           style={styles.img}
@@ -93,6 +106,7 @@ export default function HomeScreen() {
             bgColor={{ backgroundColor: "#2eb6b6" }}
             textColor={{ color: "white" }}
             iconColor="white"
+            onPressAction={() => console.log("milk")}
           />
           <RoundButton
             icon="chevron-down"
@@ -102,6 +116,7 @@ export default function HomeScreen() {
             bgColor={{ backgroundColor: "white" }}
             textColor={{ color: "black" }}
             iconColor="black"
+            onPressAction={() => flipPickCity()}
           />
         </View>
         <View style={styles.around_you_section}>

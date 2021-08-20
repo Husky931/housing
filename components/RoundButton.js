@@ -16,12 +16,10 @@ export default function RoundButton({
   bgColor,
   textColor,
   iconColor,
+  onPressAction,
 }) {
   return (
-    <TouchableOpacity
-      style={[styles.btn, bgColor]}
-      onPress={() => console.log("yo")}
-    >
+    <TouchableOpacity style={[styles.btn, bgColor]} onPress={onPressAction}>
       <View style={[globalStyles.row]}>
         <Text style={[styles.text, globalStyles.m_l_r_2, textColor]}>
           {text}
