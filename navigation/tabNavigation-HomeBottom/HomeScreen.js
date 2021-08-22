@@ -109,16 +109,8 @@ export default function HomeScreen() {
             bgColor={{ backgroundColor: "#2eb6b6" }}
             textColor={{ color: "white" }}
             iconColor="white"
-            onPressAction={() => console.log("milk")}
+            onPressAction={() => navigation.navigate("ApartmentsListOverview")}
           />
-          <Pressable
-            onPress={() => navigation.navigate("ApartmentsListOverview")}
-          >
-            <Text>Yo</Text>
-          </Pressable>
-          <Pressable onPress={() => navigation.navigate("ApartmentClicked")}>
-            <Text>Mo</Text>
-          </Pressable>
           <RoundButton
             icon="chevron-down"
             type="font-awesome"
@@ -130,13 +122,6 @@ export default function HomeScreen() {
             onPressAction={() => flipPickCity()}
           />
         </View>
-        {/* <HomeStack.Navigator>
-          <HomeStack.Screen
-            name="ApartmentsListOverview"
-            component={ApartmentsListOverview}
-          />
-          <HomeStack.Screen name="Test" component={Test} />
-        </HomeStack.Navigator> */}
         <View style={styles.around_you_section}>
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
