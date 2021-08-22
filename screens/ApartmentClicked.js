@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from "react-native";
 import globalStyles from "../globalStylesheet/app";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 
-export default function Test() {
+export default function ApartmentClicked() {
   useEffect(() => {
     console.log("i have also been rendered - Test");
   });

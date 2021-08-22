@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import RoundButton from "../components/RoundButton";
+import React, { useState } from "react";
+import RoundButton from "../../components/RoundButton";
 import {
   StyleSheet,
   View,
@@ -11,11 +11,8 @@ import {
 } from "react-native";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { useWindowDimensions } from "react-native";
-import globalStyles from "../globalStylesheet/app";
-import ApartmentsListOverview from "./ApartmentsListOverview";
-import Test from "./Test";
-// import { useNavigation } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import globalStyles from "../../globalStylesheet/app";
+import { useNavigation } from "@react-navigation/native";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -24,12 +21,7 @@ export default function HomeScreen() {
 
   const [pickCity, setPickCity] = useState(false);
 
-  const HomeStack = createNativeStackNavigator();
-
-  // const navigation = useNavigation();
-  // useEffect(() => {
-  //   console.log(navigation.navigate, "this is navigation");
-  // });
+  const navigation = useNavigation();
 
   const flipPickCity = () => {
     setPickCity(!pickCity);
@@ -71,11 +63,11 @@ export default function HomeScreen() {
               ]}
             >
               <Image
-                source={require("../images/front-skopje.jpeg")}
+                source={require("../../images/front-skopje.jpeg")}
                 style={[globalStyles.fr1, globalStyles.height100]}
               />
               <Image
-                source={require("../images/front-ohrid.jpg")}
+                source={require("../../images/front-ohrid.jpg")}
                 style={[
                   globalStyles.fr1,
                   globalStyles.height100,
@@ -83,7 +75,7 @@ export default function HomeScreen() {
                 ]}
               />
               <Image
-                source={require("../images/front-shtip.jpeg")}
+                source={require("../../images/front-shtip.jpeg")}
                 style={[globalStyles.fr1, globalStyles.height100]}
               />
             </View>
@@ -102,7 +94,7 @@ export default function HomeScreen() {
       <View style={styles.topRow}>
         <ImageBackground
           style={styles.img}
-          source={require("../images/front-image.jpg")}
+          source={require("../../images/front-image.jpg")}
         >
           <View style={styles.whiteRoundArea}></View>
         </ImageBackground>
@@ -119,9 +111,14 @@ export default function HomeScreen() {
             iconColor="white"
             onPressAction={() => console.log("milk")}
           />
-          {/* <Pressable onPress={() => navigation.navigate("apartment")}>
+          <Pressable
+            onPress={() => navigation.navigate("ApartmentsListOverview")}
+          >
             <Text>Yo</Text>
-          </Pressable> */}
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate("ApartmentClicked")}>
+            <Text>Mo</Text>
+          </Pressable>
           <RoundButton
             icon="chevron-down"
             type="font-awesome"

@@ -1,22 +1,24 @@
 import React from "react";
-import HomeScreen from "../screens/HomeScreen";
-import Chat from "../screens/Chat";
-import Liked from "../screens/Liked";
-import Me from "../screens/Me";
-import Add from "../screens/Add";
+import {
+  HomeScreen,
+  Chat,
+  Liked,
+  Me,
+  Add,
+} from "../navigation/tabNavigation-HomeBottom/";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 
-export default function Navigation() {
+export default function TabNavigationHomeBottom() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "дома") {
+          if (route.name === "home") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "пораки") {
             iconName = focused ? "chatbubbles" : "chatbubbles-outline";
@@ -36,7 +38,7 @@ export default function Navigation() {
       })}
     >
       <Tab.Screen
-        name="дома"
+        name="home"
         component={HomeScreen}
         options={{ headerShown: false }}
       />
