@@ -3,24 +3,24 @@ import { StyleSheet, View, Text } from "react-native";
 import globalStyles from "../globalStylesheet/app";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 
-export default function ApartmentsListOverview() {
+export default function Test() {
   useEffect(() => {
-    console.log("i have been rendered ApartmentsListOverview");
+    console.log("i have also been rendered - Test");
   });
   return (
     <View style={styles.container}>
-      <Text>I am the ApartmentsListOverview</Text>
+      <Text>I am the Test</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: 30,
+    height: "100%",
     width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "yellow",
+    backgroundColor: "red",
   },
 });

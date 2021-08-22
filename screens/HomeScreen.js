@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RoundButton from "../components/RoundButton";
 import {
   StyleSheet,
@@ -12,6 +12,10 @@ import {
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { useWindowDimensions } from "react-native";
 import globalStyles from "../globalStylesheet/app";
+import ApartmentsListOverview from "./ApartmentsListOverview";
+import Test from "./Test";
+// import { useNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -19,6 +23,13 @@ export default function HomeScreen() {
   let windowWidth = parseInt(window.width * 0.8);
 
   const [pickCity, setPickCity] = useState(false);
+
+  const HomeStack = createNativeStackNavigator();
+
+  // const navigation = useNavigation();
+  // useEffect(() => {
+  //   console.log(navigation.navigate, "this is navigation");
+  // });
 
   const flipPickCity = () => {
     setPickCity(!pickCity);
@@ -108,6 +119,9 @@ export default function HomeScreen() {
             iconColor="white"
             onPressAction={() => console.log("milk")}
           />
+          {/* <Pressable onPress={() => navigation.navigate("apartment")}>
+            <Text>Yo</Text>
+          </Pressable> */}
           <RoundButton
             icon="chevron-down"
             type="font-awesome"
@@ -119,10 +133,18 @@ export default function HomeScreen() {
             onPressAction={() => flipPickCity()}
           />
         </View>
+        {/* <HomeStack.Navigator>
+          <HomeStack.Screen
+            name="ApartmentsListOverview"
+            component={ApartmentsListOverview}
+          />
+          <HomeStack.Screen name="Test" component={Test} />
+        </HomeStack.Navigator> */}
         <View style={styles.around_you_section}>
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
           </Text>
+
           <View style={styles.around_you_section_apartments_list}>
             <Text>1</Text>
             <Text>2</Text>
