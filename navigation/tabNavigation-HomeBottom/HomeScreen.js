@@ -71,7 +71,7 @@ export default function HomeScreen() {
                 style={[
                   globalStyles.fr1,
                   globalStyles.height100,
-                  globalStyles.m_l_r_2,
+                  globalStyles.m_l_r_5,
                 ]}
               />
               <Image

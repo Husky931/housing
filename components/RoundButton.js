@@ -17,7 +17,7 @@ export default function RoundButton({
   return (
     <TouchableOpacity style={[styles.btn, bgColor]} onPress={onPressAction}>
       <View style={[globalStyles.row]}>
-        <Text style={[styles.text, globalStyles.m_l_r_2, textColor]}>
+        <Text style={[styles.text, globalStyles.m_l_r_5, textColor]}>
           {text}
         </Text>
         <Icon type={type} name={icon} size={size} color={iconColor} />

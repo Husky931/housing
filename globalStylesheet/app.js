@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   row: {
@@ -6,9 +7,21 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  m_l_r_2: {
+  row_start: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+  m_l_r_5: {
     marginLeft: 5,
     marginRight: 5,
+  },
+  m_t_b_5: {
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  padding_2: {
+    padding: 4,
   },
   mTopBottom_5: {
     marginTop: 5,
@@ -46,5 +59,11 @@ export default StyleSheet.create({
   },
   fontWeight900: {
     fontWeight: "900",
+  },
+  fontSize2: {
+    fontSize: responsiveFontSize(2),
+  },
+  fontSize3: {
+    fontSize: responsiveFontSize(3),
   },
 });
