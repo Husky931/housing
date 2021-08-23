@@ -1,11 +1,20 @@
 import React, { useContext } from "react";
-import { StyleSheet, View, Text, Image, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import globalStyles from "../globalStylesheet/app";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { ApartmentData } from "../apartmentData/ApartmentsList";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ApartmentsListOverview() {
   const apartmentsListed = useContext(ApartmentData);
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -13,7 +22,14 @@ export default function ApartmentsListOverview() {
         style={styles.flatListStyle}
         data={apartmentsListed}
         renderItem={({ item }) => (
-          <View style={styles.boxContainer}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("ApartmentClicked", {
+                apartmentID: item.id,
+              })
+            }
+            style={styles.boxContainer}
+          >
             <View style={styles.imagePreviewContainer}>
               <Image style={styles.imagePreview} source={item.image} />
             </View>
@@ -26,7 +42,7 @@ export default function ApartmentsListOverview() {
               <Text style={globalStyles.fontWeight600}>- {item.type}</Text>
               <Text style={styles.price}>- {item.price} denari mesecno</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
         keyExtractor={(item) => item.id.toString()}
       />

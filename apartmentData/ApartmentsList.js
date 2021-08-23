@@ -114,5 +114,3 @@ const data = [
   },
 ];
 export const ApartmentData = createContext(data);
-
-// export default data;

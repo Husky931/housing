@@ -2,11 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 import globalStyles from "../globalStylesheet/app";
-import {
-  responsiveHeight,
-  responsiveWidth,
-  responsiveFontSize,
-} from "react-native-responsive-dimensions";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 export default function RoundButton({
   icon,
