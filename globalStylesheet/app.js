@@ -32,4 +32,19 @@ export default StyleSheet.create({
   textCenter: {
     textAlign: "center",
   },
+  fontWeight500: {
+    fontWeight: "500",
+  },
+  fontWeight600: {
+    fontWeight: "600",
+  },
+  fontWeight700: {
+    fontWeight: "700",
+  },
+  fontWeight800: {
+    fontWeight: "800",
+  },
+  fontWeight900: {
+    fontWeight: "900",
+  },
 });
