@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { SafeAreaProvider as Safer } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -8,10 +8,12 @@ import ApartmentClicked from "./screens/ApartmentClicked";
 import TabNavigationHomeBottom from "./navigation/TabNavigation-HomeBottom";
 
 const Stack = createStackNavigator();
+// export const GlobalData = createContext();
 
 export default function App() {
   return (
     <Safer>
+      {/* <GlobalData.Provider> */}
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -36,6 +38,7 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
+      {/* </GlobalData.Provider> */}
     </Safer>
   );
 }

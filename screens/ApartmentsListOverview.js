@@ -1,136 +1,17 @@
-import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  FlatList,
-  ScrollView,
-} from "react-native";
+import React, { useContext } from "react";
+import { StyleSheet, View, Text, Image, FlatList } from "react-native";
 import globalStyles from "../globalStylesheet/app";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
+import { ApartmentData } from "../apartmentData/ApartmentsList";
 
 export default function ApartmentsListOverview() {
-  const data = [
-    {
-      id: 1,
-      address: "Shtip, Vanco Prke 63/6",
-      squareFeet: 13,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/1.jpeg"),
-    },
-    {
-      id: 2,
-      address: "Skopje, Pitu Guli 16",
-      squareFeet: 63,
-      term: "long term",
-      type: "one room",
-      price: "2200",
-      image: require("../images/apartment-images/2.jpeg"),
-    },
-    {
-      id: 3,
-      address:
-        "Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223",
-      squareFeet: 63,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/3.jpeg"),
-    },
-    {
-      id: 4,
-      address: "Shtip, Vanco Prke 63/6",
-      squareFeet: 13,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/1.jpeg"),
-    },
-    {
-      id: 5,
-      address: "Skopje, Pitu Guli 16",
-      squareFeet: 63,
-      term: "long term",
-      type: "one room",
-      price: "2200",
-      image: require("../images/apartment-images/2.jpeg"),
-    },
-    {
-      id: 6,
-      address:
-        "Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223",
-      squareFeet: 63,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/3.jpeg"),
-    },
-    {
-      id: 7,
-      address: "Shtip, Vanco Prke 63/6",
-      squareFeet: 13,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/1.jpeg"),
-    },
-    {
-      id: 8,
-      address: "Skopje, Pitu Guli 16",
-      squareFeet: 63,
-      term: "long term",
-      type: "one room",
-      price: "2200",
-      image: require("../images/apartment-images/2.jpeg"),
-    },
-    {
-      id: 9,
-      address:
-        "Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223",
-      squareFeet: 63,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/3.jpeg"),
-    },
-    {
-      id: 10,
-      address: "Shtip, Vanco Prke 63/6",
-      squareFeet: 13,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/1.jpeg"),
-    },
-    {
-      id: 11,
-      address: "Skopje, Pitu Guli 16",
-      squareFeet: 63,
-      term: "long term",
-      type: "one room",
-      price: "2200",
-      image: require("../images/apartment-images/2.jpeg"),
-    },
-    {
-      id: 12,
-      address:
-        "Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223, Ohrid, Pozadi Karpos 223",
-      squareFeet: 63,
-      term: "long term",
-      type: "whole apartment",
-      price: "15000",
-      image: require("../images/apartment-images/3.jpeg"),
-    },
-  ];
+  const apartmentsListed = useContext(ApartmentData);
 
   return (
     <View style={styles.container}>
       <FlatList
         style={styles.flatListStyle}
-        data={data}
+        data={apartmentsListed}
         renderItem={({ item }) => (
           <View style={styles.boxContainer}>
             <View style={styles.imagePreviewContainer}>
