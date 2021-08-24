@@ -14,6 +14,8 @@ import { useWindowDimensions } from "react-native";
 import globalStyles from "../../globalStylesheet/app";
 import { useNavigation } from "@react-navigation/native";
 import { ApartmentData } from "../../apartmentData/ApartmentsList";
+import Stat from "../../components/carousel/stat";
+import { Carousel } from "../../components/carousel/Carousel";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -22,8 +24,36 @@ export default function HomeScreen() {
 
   const [pickCity, setPickCity] = useState(false);
 
-  const featuredApartments = useContext(ApartmentData).slice(0, 5);
+  const featuredApartments = useContext(ApartmentData).slice(0, 3);
+  console.log(featuredApartments);
   const navigation = useNavigation();
+
+  const item = [
+    {
+      label: "test1",
+      value: "value1",
+    },
+    {
+      label: "test2",
+      value: "value2",
+    },
+    {
+      label: "test3",
+      value: "value4",
+    },
+    {
+      label: "test4",
+      value: "value4",
+    },
+    {
+      label: "test5",
+      value: "value5",
+    },
+    {
+      label: "test6",
+      value: "value6",
+    },
+  ];
 
   const flipPickCity = () => {
     setPickCity(!pickCity);
@@ -134,9 +164,9 @@ export default function HomeScreen() {
             <Text>2</Text>
             <Text>3</Text>
           </View>
+          <Carousel item={item} itemsPerInterval={3} />
         </View>
       </View>
-      <View style={styles.nav_tab_bottom}></View>
     </View>
   );
 }
@@ -219,5 +249,4 @@ const styles = StyleSheet.create({
   height60: {
     height: 60,
   },
-  nav_tab_bottom: {},
 });
