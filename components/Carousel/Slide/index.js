@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
 
-export const Slide = (props: any) => {
+export const Slide = (props) => {
   // const { image } = props;
 
   console.log(props, "zzzz");
