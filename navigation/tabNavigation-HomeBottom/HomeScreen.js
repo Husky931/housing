@@ -14,7 +14,6 @@ import { useWindowDimensions } from "react-native";
 import globalStyles from "../../globalStylesheet/app";
 import { useNavigation } from "@react-navigation/native";
 import { ApartmentData } from "../../apartmentData/ApartmentsList";
-import Stat from "../../components/carousel/stat";
 import { Carousel } from "../../components/carousel/Carousel";
 
 export default function HomeScreen() {
@@ -25,7 +24,6 @@ export default function HomeScreen() {
   const [pickCity, setPickCity] = useState(false);
 
   const featuredApartments = useContext(ApartmentData).slice(0, 3);
-  console.log(featuredApartments);
   const navigation = useNavigation();
 
   const item = [
@@ -154,17 +152,12 @@ export default function HomeScreen() {
             onPressAction={() => flipPickCity()}
           />
         </View>
-        <View style={styles.around_you_section}>
+
+        <View>
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
           </Text>
-
-          <View style={styles.around_you_section_apartments_list}>
-            <Text>1</Text>
-            <Text>2</Text>
-            <Text>3</Text>
-          </View>
-          <Carousel item={item} itemsPerInterval={3} />
+          <Carousel items={item} itemsPerInterval={3} />
         </View>
       </View>
     </View>

@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignContent: "center",
     justifyContent: "center",
-    borderWidth: 3,
-    borderColor: "black",
+    borderWidth: 1,
+    borderColor: "silver",
   },
   statText: {
     width: "100%",

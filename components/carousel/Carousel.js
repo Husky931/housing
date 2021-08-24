@@ -3,7 +3,7 @@ import { ScrollView, View, StyleSheet } from "react-native";
 import Stat from "./stat";
 
 export const Carousel = (props) => {
-  const { item } = props;
+  const { items } = props;
 
   const itemsPerInterval =
     props.itemsPerInterval === undefined ? 1 : props.itemsPerInterval;
@@ -12,10 +12,9 @@ export const Carousel = (props) => {
   const [width, setWidth] = useState(0);
 
   const init = (width) => {
+    console.log("init function - i have been summoned/rendered");
     setWidth(width);
-
-    const totalItems = item.length;
-    setIntervals(Math.ceil(totalItems / itemsPerInterval));
+    setIntervals(Math.ceil(items.length / itemsPerInterval));
   };
 
   return (
@@ -32,7 +31,7 @@ export const Carousel = (props) => {
         pagingEnabled
         decelerationRate="fast"
       >
-        {item.map((item, index) => (
+        {items.map((item, index) => (
           <Stat
             key={index}
             index={index}
