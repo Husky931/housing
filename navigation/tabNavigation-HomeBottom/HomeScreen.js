@@ -140,29 +140,33 @@ export default function HomeScreen() {
           <Carousel
             style="stats"
             itemsPerInterval={3}
-            // items={sentFeaturedApartments}
-            items={[
-              {
-                label: "TODAY",
-                value: 1,
-              },
-              {
-                label: "THIS WEEK",
-                value: 39,
-              },
-              {
-                label: "THIS MONTH",
-                value: 120,
-              },
-              {
-                label: "YESTERDAY",
-                value: 3,
-              },
-              {
-                label: "LAST WEEK",
-                value: 25,
-              },
-            ]}
+            items={sentFeaturedApartments}
+            // items={[
+            //   {
+            //     label: "TODAY",
+            //     value: 1,
+            //   },
+            //   {
+            //     label: "THIS WEEK",
+            //     value: 39,
+            //   },
+            //   {
+            //     label: "THIS MONTH",
+            //     value: 120,
+            //   },
+            //   {
+            //     label: "YESTERDAY",
+            //     value: 3,
+            //   },
+            //   {
+            //     label: "LAST WEEK",
+            //     value: 25,
+            //   },
+            //   {
+            //     label: "LAST WEEK",
+            //     value: 25,
+            //   },
+            // ]}
           />
         </View>
       </View>

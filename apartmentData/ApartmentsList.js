@@ -182,7 +182,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 2,
-    featured: false,
+    featured: true,
   },
 ];
 

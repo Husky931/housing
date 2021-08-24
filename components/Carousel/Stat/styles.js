@@ -2,13 +2,11 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   stat: {
-    paddingHorizontal: 20,
-    paddingBottom: 10,
-    paddingTop: 30,
+    paddingHorizontal: 5,
     flexBasis: "33%",
     flex: 1,
-    width: "33%",
-    maxHeight: 3000,
+    maxWidth: "33%",
+    height: 180,
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
@@ -16,19 +14,24 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "center",
   },
-  // img: {
+  img: {
+    width: "100%",
+    height: 120,
+  },
+  truncateText: {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+  },
+  // statText: {
   //   width: "100%",
-  //   height: "100%",
+  //   textAlign: "left",
+  //   fontSize: 20,
   // },
-  statText: {
-    width: "100%",
-    textAlign: "left",
-    fontSize: 20,
-  },
-  statHold: {
-    width: "100%",
-    marginBottom: 8,
-  },
+  // statHold: {
+  //   width: "100%",
+  //   marginBottom: 8,
+  // },
   statLabel: {
     width: "100%",
     textAlign: "left",
