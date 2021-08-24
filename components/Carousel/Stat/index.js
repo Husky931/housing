@@ -4,7 +4,6 @@ import { styles } from "./styles";
 
 export const Stat = (props: any) => {
   const { label, value } = props;
-  console.log(value);
   return (
     <>
       <View style={styles.stat}>

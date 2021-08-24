@@ -18,11 +18,6 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: 120,
   },
-  truncateText: {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-  },
   // statText: {
   //   width: "100%",
   //   textAlign: "left",

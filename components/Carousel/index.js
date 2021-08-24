@@ -39,7 +39,7 @@ export const Carousel = (props) => {
         key={i}
         style={{
           ...styles.bullet,
-          opacity: interval === i ? 0.5 : 0.1,
+          opacity: interval === i ? 1 : 0.4,
         }}
       >
         &bull;

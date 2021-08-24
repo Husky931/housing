@@ -5,7 +5,7 @@ import { styles } from "./styles";
 export const Slide = (props) => {
   return (
     <View style={styles.slide}>
-      <Image source={props.title} style={{ ...styles.slideText }} />
+      <Image source={props.title} style={styles.slideText} />
     </View>
   );
 };
