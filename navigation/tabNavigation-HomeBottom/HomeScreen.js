@@ -14,7 +14,7 @@ import { useWindowDimensions } from "react-native";
 import globalStyles from "../../globalStylesheet/app";
 import { useNavigation } from "@react-navigation/native";
 import { ApartmentData } from "../../apartmentData/ApartmentsList";
-import { Carousel } from "../../components/carousel/Carousel";
+import { Carousel } from "../../components/Carousel";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -152,12 +152,59 @@ export default function HomeScreen() {
             onPressAction={() => flipPickCity()}
           />
         </View>
-
         <View>
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
           </Text>
-          <Carousel items={item} itemsPerInterval={3} />
+          <Carousel
+            style="stats"
+            itemsPerInterval={3}
+            items={[
+              {
+                label: "TODAY",
+                value: 1,
+              },
+              {
+                label: "THIS WEEK",
+                value: 39,
+              },
+              {
+                label: "THIS MONTH",
+                value: 120,
+              },
+              {
+                label: "YESTERDAY",
+                value: 3,
+              },
+              {
+                label: "LAST WEEK",
+                value: 25,
+              },
+              {
+                label: "LAST MONTH",
+                value: 175,
+              },
+            ]}
+          />
+        </View>
+        <View>
+          <Text style={styles.around_you_section_heading}>
+            Во твоја близина
+          </Text>
+          <Carousel
+            style="slide"
+            items={[
+              {
+                title: "Welcome, swipe to continue.",
+              },
+              {
+                title: "About feature X.",
+              },
+              {
+                title: "About feature Y.",
+              },
+            ]}
+          />
         </View>
       </View>
     </View>
