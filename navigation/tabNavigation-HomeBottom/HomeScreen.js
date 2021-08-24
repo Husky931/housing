@@ -133,7 +133,7 @@ export default function HomeScreen() {
             onPressAction={() => flipPickCity()}
           />
         </View>
-        <View>
+        <View style={globalStyles.m_t_b_20}>
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
           </Text>
@@ -141,32 +141,6 @@ export default function HomeScreen() {
             style="stats"
             itemsPerInterval={3}
             items={sentFeaturedApartments}
-            // items={[
-            //   {
-            //     label: "TODAY",
-            //     value: 1,
-            //   },
-            //   {
-            //     label: "THIS WEEK",
-            //     value: 39,
-            //   },
-            //   {
-            //     label: "THIS MONTH",
-            //     value: 120,
-            //   },
-            //   {
-            //     label: "YESTERDAY",
-            //     value: 3,
-            //   },
-            //   {
-            //     label: "LAST WEEK",
-            //     value: 25,
-            //   },
-            //   {
-            //     label: "LAST WEEK",
-            //     value: 25,
-            //   },
-            // ]}
           />
         </View>
       </View>

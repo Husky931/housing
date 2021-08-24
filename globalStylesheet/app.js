@@ -2,6 +2,9 @@ import { StyleSheet } from "react-native";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
+  primaryColorBg: {
+    backgroundColor: "#2eb6b6",
+  },
   row: {
     flexDirection: "row",
     alignItems: "center",
@@ -20,12 +23,16 @@ export default StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
   },
+  m_t_b_2: {
+    marginTop: 2,
+    marginBottom: 2,
+  },
+  m_t_b_20: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
   padding_2: {
     padding: 4,
-  },
-  mTopBottom_5: {
-    marginTop: 5,
-    marginBottom: 5,
   },
   width100: {
     width: "100%",

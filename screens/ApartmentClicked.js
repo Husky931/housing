@@ -32,23 +32,23 @@ export default function ApartmentClicked({ route }) {
           <Text style={[styles.redHighlightPrice, globalStyles.fontWeight800]}>
             {apartmentData.price} денари месечно
           </Text>
-          <View style={globalStyles.row_start}>
+          <View style={[globalStyles.row_start, globalStyles.m_t_b_5]}>
             <Ionicons name="star-outline" size={25} color="#2eb6b6" />
             <Text style={[globalStyles.m_l_r_5, globalStyles.fontWeight700]}>
               КРАТКОРОЧНО - СЕ ИЗНАЈМУВА НА 1 ДО 6 МЕСЕЦИ
             </Text>
           </View>
           <View>
-            <Text style={globalStyles.fontWeight700}>
+            <Text style={[globalStyles.fontWeight700, globalStyles.m_t_b_2]}>
               Тип на договор: {apartmentData.term}
             </Text>
-            <Text style={globalStyles.fontWeight700}>
+            <Text style={[globalStyles.fontWeight700, globalStyles.m_t_b_2]}>
               Тип: {apartmentData.type}
             </Text>
-            <Text style={globalStyles.fontWeight700}>
+            <Text style={[globalStyles.fontWeight700, globalStyles.m_t_b_2]}>
               Големина: {apartmentData.squareFeet} м2
             </Text>
-            <Text style={globalStyles.fontWeight700}>
+            <Text style={[globalStyles.fontWeight700, globalStyles.m_t_b_2]}>
               Број на соби: {apartmentData.brojNaSobi}
             </Text>
           </View>
@@ -120,6 +120,16 @@ export default function ApartmentClicked({ route }) {
           </Text>
         </View>
       </ScrollView>
+      <View style={styles.footer}>
+        <View style={styles.footerDivision}>
+          <Ionicons name="heart-outline" size={30} color="white" />
+          <Text style={styles.footerDivisionText}>Зачувај</Text>
+        </View>
+        <View style={styles.footerDivision}>
+          <Ionicons name="chatbubble-outline" size={30} color="white" />
+          <Text style={styles.footerDivisionText}>Порака</Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -144,13 +154,13 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: "4%",
     borderBottomWidth: 4,
-    borderBottomColor: "silver",
+    borderBottomColor: "#2eb6b6",
   },
   box_two_tagsSection: {
     width: "100%",
     padding: "2%",
     borderBottomWidth: 4,
-    borderBottomColor: "silver",
+    borderBottomColor: "#2eb6b6",
     flexDirection: "row",
     flexWrap: "wrap",
   },
@@ -158,13 +168,39 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: "4%",
     borderBottomWidth: 1,
-    borderBottomColor: "silver",
+    borderBottomColor: "#2eb6b6",
   },
   redHighlightPrice: {
     color: "red",
     fontSize: responsiveFontSize(3),
   },
   highlightTags: {
-    backgroundColor: "silver",
+    backgroundColor: "#2eb6b6",
+  },
+  footer: {
+    width: "100%",
+    // height: "12%",
+    // backgroundColor: "silver",
+    flexDirection: "row",
+    textAlign: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: "4%",
+  },
+  footerDivision: {
+    // flex: 1,
+    width: "33%",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#2eb6b6",
+    marginHorizontal: "3%",
+    padding: "2%",
+    borderRadius: 5,
+  },
+  footerDivisionText: {
+    fontSize: 20,
+    color: "white",
+    marginHorizontal: "5%",
   },
 });
