@@ -23,7 +23,15 @@ export default function HomeScreen() {
 
   const [pickCity, setPickCity] = useState(false);
 
-  const featuredApartments = useContext(ApartmentData).slice(0, 3);
+  const apartmentList = useContext(ApartmentData);
+  const featuredApartments = apartmentList.filter((f) => f.featured === true);
+  const sentFeaturedApartments = [];
+  for (const featured of featuredApartments) {
+    sentFeaturedApartments.push({
+      value: featured,
+    });
+  }
+
   const navigation = useNavigation();
 
   const flipPickCity = () => {
@@ -129,9 +137,10 @@ export default function HomeScreen() {
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
           </Text>
-          {/* <Carousel
+          <Carousel
             style="stats"
             itemsPerInterval={3}
+            // items={sentFeaturedApartments}
             items={[
               {
                 label: "TODAY",
@@ -153,12 +162,8 @@ export default function HomeScreen() {
                 label: "LAST WEEK",
                 value: 25,
               },
-              {
-                label: "LAST MONTH",
-                value: 175,
-              },
             ]}
-          /> */}
+          />
         </View>
       </View>
     </View>

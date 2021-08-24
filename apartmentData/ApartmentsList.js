@@ -13,6 +13,7 @@ const data = [
       require("../images/apartment-images/3.jpeg"),
     ],
     brojNaSobi: 4,
+    featured: false,
   },
   {
     id: 2,
@@ -27,6 +28,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 2,
+    featured: false,
   },
   {
     id: 3,
@@ -42,6 +44,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 1,
+    featured: true,
   },
   {
     id: 4,
@@ -56,6 +59,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 3,
+    featured: true,
   },
   {
     id: 5,
@@ -70,6 +74,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 5,
+    featured: false,
   },
   {
     id: 6,
@@ -85,6 +90,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 1,
+    featured: true,
   },
   {
     id: 7,
@@ -99,6 +105,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 2,
+    featured: false,
   },
   {
     id: 8,
@@ -113,6 +120,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 1,
+    featured: true,
   },
   {
     id: 9,
@@ -128,6 +136,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 3,
+    featured: false,
   },
   {
     id: 10,
@@ -142,6 +151,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 3,
+    featured: true,
   },
   {
     id: 11,
@@ -156,6 +166,7 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 4,
+    featured: false,
   },
   {
     id: 12,
@@ -171,6 +182,8 @@ const data = [
       require("../images/apartment-images/1.jpeg"),
     ],
     brojNaSobi: 2,
+    featured: false,
   },
 ];
+
 export const ApartmentData = createContext(data);
