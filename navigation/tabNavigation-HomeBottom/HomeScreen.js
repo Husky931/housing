@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import RoundButton from "../../components/RoundButton";
 import {
   StyleSheet,
@@ -13,6 +13,7 @@ import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { useWindowDimensions } from "react-native";
 import globalStyles from "../../globalStylesheet/app";
 import { useNavigation } from "@react-navigation/native";
+import { ApartmentData } from "../../apartmentData/ApartmentsList";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -21,6 +22,7 @@ export default function HomeScreen() {
 
   const [pickCity, setPickCity] = useState(false);
 
+  const featuredApartments = useContext(ApartmentData).slice(0, 5);
   const navigation = useNavigation();
 
   const flipPickCity = () => {

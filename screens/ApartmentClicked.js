@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   box_three_description: {
     width: "100%",
     padding: "4%",
-    borderBottomWidth: 4,
+    borderBottomWidth: 1,
     borderBottomColor: "silver",
   },
   redHighlightPrice: {
