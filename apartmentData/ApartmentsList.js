@@ -7,7 +7,11 @@ const data = [
     term: "short term",
     type: "whole apartment",
     price: "15000",
-    image: require("../images/apartment-images/1.jpeg"),
+    image: [
+      require("../images/apartment-images/1.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/3.jpeg"),
+    ],
     brojNaSobi: 4,
   },
   {
@@ -17,7 +21,11 @@ const data = [
     term: "short term",
     type: "shared",
     price: "2200",
-    image: require("../images/apartment-images/2.jpeg"),
+    image: [
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 2,
   },
   {
@@ -28,7 +36,11 @@ const data = [
     term: "long term",
     type: "whole apartment",
     price: "15000",
-    image: require("../images/apartment-images/3.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 1,
   },
   {
@@ -38,7 +50,11 @@ const data = [
     term: "short term",
     type: "shared",
     price: "15000",
-    image: require("../images/apartment-images/1.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 3,
   },
   {
@@ -48,7 +64,11 @@ const data = [
     term: "long term",
     type: "whole apartment",
     price: "2200",
-    image: require("../images/apartment-images/2.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 5,
   },
   {
@@ -59,7 +79,11 @@ const data = [
     term: "short term",
     type: "shared",
     price: "15000",
-    image: require("../images/apartment-images/3.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 1,
   },
   {
@@ -69,7 +93,11 @@ const data = [
     term: "long term",
     type: "whole apartment",
     price: "15000",
-    image: require("../images/apartment-images/1.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 2,
   },
   {
@@ -79,7 +107,11 @@ const data = [
     term: "short term",
     type: "shared",
     price: "2200",
-    image: require("../images/apartment-images/2.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 1,
   },
   {
@@ -90,7 +122,11 @@ const data = [
     term: "long term",
     type: "whole apartment",
     price: "15000",
-    image: require("../images/apartment-images/3.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 3,
   },
   {
@@ -100,7 +136,11 @@ const data = [
     term: "short term",
     type: "shared",
     price: "15000",
-    image: require("../images/apartment-images/1.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 3,
   },
   {
@@ -110,7 +150,11 @@ const data = [
     term: "long term",
     type: "whole apartment",
     price: "2200",
-    image: require("../images/apartment-images/2.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 4,
   },
   {
@@ -121,7 +165,11 @@ const data = [
     term: "short term",
     type: "shared",
     price: "15000",
-    image: require("../images/apartment-images/3.jpeg"),
+    image: [
+      require("../images/apartment-images/3.jpeg"),
+      require("../images/apartment-images/2.jpeg"),
+      require("../images/apartment-images/1.jpeg"),
+    ],
     brojNaSobi: 2,
   },
 ];

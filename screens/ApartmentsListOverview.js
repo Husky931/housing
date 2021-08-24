@@ -31,7 +31,7 @@ export default function ApartmentsListOverview() {
             style={styles.boxContainer}
           >
             <View style={styles.imagePreviewContainer}>
-              <Image style={styles.imagePreview} source={item.image} />
+              <Image style={styles.imagePreview} source={item.image[0]} />
             </View>
             <View style={styles.textDescription}>
               <Text style={globalStyles.fontWeight600}>- {item.address}</Text>

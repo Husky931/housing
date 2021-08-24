@@ -12,7 +12,12 @@ export default function ApartmentClicked({ route }) {
     (f) => f.id === apartmentID
   )[0];
 
-  console.log(apartmentData, "i am apartmentData");
+  const sentApartmentImages = [];
+  for (const apartment of apartmentData.image) {
+    sentApartmentImages.push({
+      title: apartment,
+    });
+  }
 
   return (
     <View style={styles.mainContainer}>
@@ -21,19 +26,7 @@ export default function ApartmentClicked({ route }) {
           <Image style={styles.imageDisplay} source={apartmentData.image} />
         </View> */}
         <View>
-          <Carousel
-            style="slide"
-            items={[
-              { title: apartmentData },
-
-              // {
-              //   title: "About feature X.",
-              // },
-              // {
-              //   title: "About feature Y.",
-              // },
-            ]}
-          />
+          <Carousel style="slide" items={sentApartmentImages} />
         </View>
         <View style={styles.box_one}>
           <Text style={[styles.redHighlightPrice, globalStyles.fontWeight800]}>
