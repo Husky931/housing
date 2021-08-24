@@ -4,6 +4,7 @@ import { ApartmentData } from "../apartmentData/ApartmentsList";
 import globalStyles from "../globalStylesheet/app";
 import { responsiveFontSize } from "react-native-responsive-dimensions";
 import { Ionicons } from "@expo/vector-icons";
+import { Carousel } from "../components/Carousel";
 
 export default function ApartmentClicked({ route }) {
   const apartmentID = route.params.apartmentID;
@@ -11,12 +12,28 @@ export default function ApartmentClicked({ route }) {
     (f) => f.id === apartmentID
   )[0];
 
+  console.log(apartmentData, "i am apartmentData");
+
   return (
     <View style={styles.mainContainer}>
       <ScrollView style={styles.scrollView}>
-        {/* <View style={styles.container}> */}
-        <View style={styles.imagePreviewBox}>
+        {/* <View style={styles.imagePreviewBox}>
           <Image style={styles.imageDisplay} source={apartmentData.image} />
+        </View> */}
+        <View>
+          <Carousel
+            style="slide"
+            items={[
+              { title: apartmentData },
+
+              // {
+              //   title: "About feature X.",
+              // },
+              // {
+              //   title: "About feature Y.",
+              // },
+            ]}
+          />
         </View>
         <View style={styles.box_one}>
           <Text style={[styles.redHighlightPrice, globalStyles.fontWeight800]}>
@@ -109,8 +126,6 @@ export default function ApartmentClicked({ route }) {
             culpa qui officia deserunt mollit anim id est laborum.
           </Text>
         </View>
-
-        {/* </View> */}
       </ScrollView>
     </View>
   );

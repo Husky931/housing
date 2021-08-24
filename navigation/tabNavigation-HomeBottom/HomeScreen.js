@@ -26,33 +26,6 @@ export default function HomeScreen() {
   const featuredApartments = useContext(ApartmentData).slice(0, 3);
   const navigation = useNavigation();
 
-  const item = [
-    {
-      label: "test1",
-      value: "value1",
-    },
-    {
-      label: "test2",
-      value: "value2",
-    },
-    {
-      label: "test3",
-      value: "value4",
-    },
-    {
-      label: "test4",
-      value: "value4",
-    },
-    {
-      label: "test5",
-      value: "value5",
-    },
-    {
-      label: "test6",
-      value: "value6",
-    },
-  ];
-
   const flipPickCity = () => {
     setPickCity(!pickCity);
   };
@@ -156,7 +129,7 @@ export default function HomeScreen() {
           <Text style={styles.around_you_section_heading}>
             Во твоја близина
           </Text>
-          <Carousel
+          {/* <Carousel
             style="stats"
             itemsPerInterval={3}
             items={[
@@ -185,26 +158,7 @@ export default function HomeScreen() {
                 value: 175,
               },
             ]}
-          />
-        </View>
-        <View>
-          <Text style={styles.around_you_section_heading}>
-            Во твоја близина
-          </Text>
-          <Carousel
-            style="slide"
-            items={[
-              {
-                title: "Welcome, swipe to continue.",
-              },
-              {
-                title: "About feature X.",
-              },
-              {
-                title: "About feature Y.",
-              },
-            ]}
-          />
+          /> */}
         </View>
       </View>
     </View>

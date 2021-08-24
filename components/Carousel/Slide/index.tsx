@@ -1,18 +1,16 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import { styles } from './styles'
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { styles } from "./styles";
 
 export const Slide = (props: any) => {
+  // const { image } = props;
 
-  const { title } = props;
-
+  console.log(props, "zzzz");
   return (
     <View style={styles.slide}>
-      <Text style={{ ...styles.slideText }}>
-        {title}
-      </Text>
+      <Image source={props.title.image} style={{ ...styles.slideText }} />
     </View>
   );
-}
+};
 
 export default Slide;
