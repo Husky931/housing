@@ -15,6 +15,7 @@ import globalStyles from "../../globalStylesheet/app";
 import { useNavigation } from "@react-navigation/native";
 import { ApartmentData } from "../../apartmentData/ApartmentsList";
 import { Carousel } from "../../components/Carousel";
+import { GOOGLE_LOCATION_KEY } from "@env";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();

@@ -27,6 +27,9 @@ export default StyleSheet.create({
     marginTop: 2,
     marginBottom: 2,
   },
+  m_t_b_1: {
+    marginVertical: 1,
+  },
   m_t_b_20: {
     marginTop: 20,
     marginBottom: 20,
