@@ -63,7 +63,7 @@ export default function HomeScreen() {
           <Pressable
             style={[
               styles.absolute_city_picker_box,
-              { height: windowHeight, width: windowWidth, borderRadius: "10%" },
+              { height: windowHeight, width: windowWidth, borderRadius: 10 },
             ]}
           >
             <View

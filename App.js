@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React, { createContext, useContext } from "react";
+import React from "react";
 import { SafeAreaProvider as Safer } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
