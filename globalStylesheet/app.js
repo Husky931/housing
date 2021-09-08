@@ -34,6 +34,9 @@ export default StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
   },
+  mBottom10: {
+    marginBottom: 10,
+  },
   padding_2: {
     padding: 4,
   },

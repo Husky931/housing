@@ -71,6 +71,7 @@ export default function HomeScreen() {
                 globalStyles.row,
                 globalStyles.width100,
                 globalStyles.mTopBottom_5,
+                globalStyles.mBottom10,
                 styles.height60,
               ]}
             >
@@ -92,18 +93,21 @@ export default function HomeScreen() {
               />
             </View>
             {cities.map((city, i) => (
-              <Button
+              <Pressable
                 key={i}
-                style={styles.cities_list_IndividualCity_View}
-                title={city}
                 onPress={() => console.log(city)}
-              ></Button>
+                style={styles.cities_list_IndividualCity_View}
+              >
+                <Text style={styles.cities_list_IndividualCity_Text}>
+                  {city}
+                </Text>
+              </Pressable>
             ))}
           </Pressable>
         </Pressable>
       )}
 
-      <View style={styles.topRow} onPress={() => console.log("clicked")}>
+      <View style={styles.topRow}>
         <ImageBackground
           style={styles.img}
           source={require("../../images/front-image.jpg")}
@@ -174,17 +178,14 @@ const styles = StyleSheet.create({
     height: "40%",
     width: "100%",
     position: "relative",
-    // zIndex: 10000,
   },
   img: {
     width: "100%",
     height: "100%",
-    // position: "relative",
   },
   whiteRoundArea: {
     height: "20%",
     backgroundColor: "#f0f8ff",
-    // zIndex: -1,
     position: "absolute",
     bottom: -1,
     left: 0,
@@ -201,7 +202,6 @@ const styles = StyleSheet.create({
     top: "27%",
   },
   buttonSection: {
-    // marginTop: "-22%",
     alignItems: "center",
     backgroundColor: "transparent",
   },
@@ -224,11 +224,17 @@ const styles = StyleSheet.create({
   cities_list_IndividualCity_View: {
     margin: "2%",
     marginBottom: "6%",
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderBottomColor: "silver",
+    // fontSize: responsiveFontSize(2),
+    // fontWeight: "bold",
+    // textAlign: "center",
+  },
+  cities_list_IndividualCity_Text: {
     fontSize: responsiveFontSize(2),
-    fontWeight: "bold",
+    fontWeight: "600",
     textAlign: "left",
+    paddingBottom: 3,
   },
   height60: {
     height: 60,
