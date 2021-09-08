@@ -15,7 +15,11 @@ export default function RoundButton({
   onPressAction,
 }) {
   return (
-    <TouchableOpacity style={[styles.btn, bgColor]} onPress={onPressAction}>
+    <TouchableOpacity
+      style={[styles.btn, bgColor]}
+      onPress={onPressAction}
+      activeOpacity={0.75}
+    >
       <View style={[globalStyles.row]}>
         <Text style={[styles.text, globalStyles.m_l_r_5, textColor]}>
           {text}
@@ -36,6 +40,7 @@ const styles = StyleSheet.create({
     marginTop: "2%",
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.4,
+    zIndex: 20000,
   },
   text: {
     fontWeight: "bold",

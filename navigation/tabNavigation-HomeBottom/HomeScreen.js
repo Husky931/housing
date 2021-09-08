@@ -103,7 +103,7 @@ export default function HomeScreen() {
         </Pressable>
       )}
 
-      <View style={styles.topRow}>
+      <View style={styles.topRow} onPress={() => console.log("clicked")}>
         <ImageBackground
           style={styles.img}
           source={require("../../images/front-image.jpg")}
@@ -173,31 +173,37 @@ const styles = StyleSheet.create({
   topRow: {
     height: "40%",
     width: "100%",
+    position: "relative",
+    // zIndex: 10000,
   },
   img: {
     width: "100%",
     height: "100%",
-    position: "relative",
+    // position: "relative",
   },
   whiteRoundArea: {
     height: "20%",
     backgroundColor: "#f0f8ff",
-    position: "absolute",
     // zIndex: -1,
+    position: "absolute",
     bottom: -1,
     left: 0,
     right: 0,
-    borderTopLeftRadius: 1000,
-    borderTopRightRadius: 1000,
+    borderTopLeftRadius: 700,
+    borderTopRightRadius: 700,
   },
   bottomRow: {
     width: "100%",
-    backgroundColor: "#f0f8ff",
+    // backgroundColor: "#f0f8ff",
+    backgroundColor: "transparent",
     flex: 1,
+    position: "absolute",
+    top: "27%",
   },
   buttonSection: {
-    marginTop: "-22%",
+    // marginTop: "-22%",
     alignItems: "center",
+    backgroundColor: "transparent",
   },
   around_you_section: {
     marginTop: "10%",
