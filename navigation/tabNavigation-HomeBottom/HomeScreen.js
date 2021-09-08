@@ -5,7 +5,6 @@ import {
   View,
   ImageBackground,
   Text,
-  Button,
   Image,
   Pressable,
 } from "react-native";
@@ -16,6 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ApartmentData } from "../../apartmentData/ApartmentsList";
 import { Carousel } from "../../components/Carousel";
 import { GOOGLE_LOCATION_KEY } from "@env";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function HomeScreen() {
   const window = useWindowDimensions();
@@ -45,6 +45,12 @@ export default function HomeScreen() {
     "Охрид",
     "Дојран",
     "Преспа",
+    "Битола",
+    "Струмица",
+    "Куманово",
+    "Прилеп",
+    "Тетово",
+    "Велес",
     "Битола",
     "Струмица",
     "Куманово",
@@ -92,17 +98,19 @@ export default function HomeScreen() {
                 style={[globalStyles.fr1, globalStyles.height100]}
               />
             </View>
-            {cities.map((city, i) => (
-              <Pressable
-                key={i}
-                onPress={() => console.log(city)}
-                style={styles.cities_list_IndividualCity_View}
-              >
-                <Text style={styles.cities_list_IndividualCity_Text}>
-                  {city}
-                </Text>
-              </Pressable>
-            ))}
+            <ScrollView>
+              {cities.map((city, i) => (
+                <Pressable
+                  key={i}
+                  onPress={() => console.log(city)}
+                  style={styles.cities_list_IndividualCity_View}
+                >
+                  <Text style={styles.cities_list_IndividualCity_Text}>
+                    {city}
+                  </Text>
+                </Pressable>
+              ))}
+            </ScrollView>
           </Pressable>
         </Pressable>
       )}
@@ -226,9 +234,6 @@ const styles = StyleSheet.create({
     marginBottom: "6%",
     borderBottomWidth: 1,
     borderBottomColor: "silver",
-    // fontSize: responsiveFontSize(2),
-    // fontWeight: "bold",
-    // textAlign: "center",
   },
   cities_list_IndividualCity_Text: {
     fontSize: responsiveFontSize(2),
