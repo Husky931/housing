@@ -9,6 +9,8 @@ export default function RoundButton({
   type,
   text,
   size,
+  width = 250,
+  height = 50,
   bgColor,
   textColor,
   iconColor,
@@ -16,9 +18,8 @@ export default function RoundButton({
 }) {
   return (
     <TouchableOpacity
-      style={[styles.btn, bgColor]}
+      style={[styles.btn, bgColor, { width, height }]}
       onPress={onPressAction}
-      activeOpacity={0.75}
     >
       <View style={[globalStyles.row]}>
         <Text style={[styles.text, globalStyles.m_l_r_5, textColor]}>
@@ -32,15 +33,12 @@ export default function RoundButton({
 
 const styles = StyleSheet.create({
   btn: {
-    width: "80%",
-    height: 60,
     borderRadius: 100,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "2%",
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.4,
-    zIndex: 20000,
+    marginBottom: 5,
+    height: 50,
+    width: 250,
   },
   text: {
     fontWeight: "bold",
